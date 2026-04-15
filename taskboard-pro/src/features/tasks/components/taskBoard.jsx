@@ -1,10 +1,16 @@
 import { useState } from "react"
 import { TaskForm } from "./TaskForm"
 import { TaskList } from "./TaskList"
+import { TASK_UI_TEXT } from "../constants/task-ui.constants"
+import { HTML_TAGS } from "../../../shared/constants/html-tags.constants"
 
 export function TaskBoard() {
   const [taskText, setTaskText] = useState("")
   const [tasks, setTasks] = useState([])
+  
+  //Uso de constantes para etiquetas HTML
+  const SectionTag = HTML_TAGS.SECTION
+  const TitleTag = HTML_TAGS.H3
 
   const handleTaskTextChange = (event) => {
     setTaskText(event.target.value)
@@ -26,8 +32,8 @@ export function TaskBoard() {
   }
 
   return (
-    <section>
-      <h2>Gestión de tareas</h2>
+    <SectionTag>
+      <TitleTag>{TASK_UI_TEXT.BOARD_TITLE}</TitleTag>
 
       <TaskForm
         taskText={taskText}
@@ -36,6 +42,6 @@ export function TaskBoard() {
       />
 
       <TaskList tasks={tasks} />
-    </section>
+    </SectionTag>
   )
 }
