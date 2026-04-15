@@ -11,4 +11,6 @@ export const HTML_TAGS = {
     LABEL: "label",
     INPUT: "input",
     BUTTON: "button",
+    SELECT: "select",
+    OPTION: "option",
 }
