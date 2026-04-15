@@ -1,5 +1,5 @@
 import './App.css'
-import { TaskBoard } from "../features/tasks/components/taskBoard"
+import { TaskBoard } from "./features/tasks/components/TaskBoard"
 
 function App() {
   return (
