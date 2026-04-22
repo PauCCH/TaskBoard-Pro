@@ -1,5 +1,6 @@
 import { useTheme } from "../hooks/useTheme"
 import { HTML_TAGS } from "../../../shared/constants/html-tags.constants"
+import { THEME } from "../constants/theme-ui.constants"
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme()
@@ -8,7 +9,7 @@ export function ThemeToggle() {
 
   return (
     <ButtonTag onClick={toggleTheme}>
-      Tema actual: {theme}
+      {THEME.ACTUAL_THEME}{theme}
     </ButtonTag>
   )
 }
