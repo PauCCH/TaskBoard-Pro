@@ -1,17 +1,31 @@
-import './App.css'
-import { TaskBoard } from "../features/tasks/components/TaskBoard"
 import { HTML_TAGS } from "../shared/constants/html-tags.constants"
+import { TaskBoard } from "../features/tasks/components/TaskBoard"
+import { ThemeProvider } from "../features/theme/context/ThemeProvider"
+import { ThemeToggle } from "../features/theme/components/ThemeToggle"
+import { useTheme } from "../features/theme/hooks/useTheme"
+import { useDocumentTitle } from "../shared/hooks/useDocumentTitle"
+import "./styles/index.css"
 
-function App() {
-
+function AppContent() {
   const MainTag = HTML_TAGS.MAIN
-  const H1Tag = HTML_TAGS.H1
+  const TitleTag = HTML_TAGS.H1
+const { theme } = useTheme()
+  useDocumentTitle("TaskBoard Hooks Lab")
 
   return (
-    <MainTag>
-      <H1Tag>TaskBoard Hooks Lab</H1Tag>
+    <MainTag className={theme}>
+      {/* <TitleTag>TaskBoard Hooks Lab</TitleTag> */}
+      <ThemeToggle />
       <TaskBoard />
     </MainTag>
+  )
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   )
 }
 

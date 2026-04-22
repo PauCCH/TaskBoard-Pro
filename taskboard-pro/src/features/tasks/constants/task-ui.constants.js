@@ -15,4 +15,8 @@ export const TASK_UI_TEXT = {
   FILTER_ALL: "Todas",
   FILTER_PENDING: "Pendientes",
   FILTER_COMPLETED: "Completadas",
+  STATS_TITLE: "Estadísticas",
+  STATS_TOTAL: "Total",
+  STATS_COMPLETED: "Completadas",
+  STATS_PENDING: "Pendientes",
 }
